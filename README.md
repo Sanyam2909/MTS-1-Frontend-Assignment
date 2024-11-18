@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Trade Data Dashboard
+This is a Trade Data Dashboard application built with Next.js 13, Auth0, React, Chart.js, and Tailwind CSS. It provides user authentication and an interactive dashboard to analyze trade data insights with metrics and visualizations.
 
-## Getting Started
+Features
+User Authentication: Secure login using Auth0.
+Dashboard: Displays trade data metrics and line charts for annual trade values.
+Dynamic Data Handling: Fetches and aggregates data from a JSON file.
+Responsive Design: Optimized for both desktop and mobile using Tailwind CSS.
+Interactive Visualizations: Line chart powered by Chart.js.
+Folder Structure
+plaintext
+Copy code
+├── app
+│   ├── components
+│   │   ├── Chart.tsx          # Line chart for trade data visualization
+│   │   ├── Dashboard.tsx      # Dashboard displaying metrics and charts
+│   │   ├── Home.tsx           # Home page content for authenticated users
+│   │   ├── Login.tsx          # Login page with Auth0 integration
+│   │   ├── Logout.tsx         # Logout button for user sign-out
+│   │   ├── Metrics.tsx        # Component for displaying trade metrics
+│   │   ├── NavBar.tsx         # Navigation bar with links and logout button
+│   ├── dashboard
+│   │   └── page.tsx           # Dashboard route entry point
+│   ├── home
+│   │   └── page.tsx           # Home route entry point
+│   ├── page.tsx               # Main entry point for root route (`/`)
+│   └── layout.tsx             # Application layout with global styling and NavBar
+├── public
+│   ├── images
+│   │   └── trade-data-analytics.jpg  # Image for home page display
+│   └── combined.json          # Trade data in JSON format
+├── styles
+│   └── globals.css            # Global Tailwind CSS styling
+├── .env.local                 # Environment variables for Auth0
+├── README.md                  # Project documentation
+├── package.json               # Dependencies and scripts
+├── tsconfig.json              # TypeScript configuration
 
-First, run the development server:
 
-```bash
+Setup Instructions
+1. Clone the Repository
+git clone <repository_url>
+cd trade-data-dashboard
+2. Install Dependencies
+npm install
+3. Configure Environment Variables
+Create a .env.local file in the root directory and configure your Auth0 credentials:
+env
+Copy code
+NEXT_PUBLIC_AUTH0_DOMAIN=<your-auth0-domain>
+NEXT_PUBLIC_AUTH0_CLIENT_ID=<your-auth0-client-id>
+NEXT_PUBLIC_AUTH0_REDIRECT_URI=http://localhost:3000
+4. Start the Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Application Overview
+1. Authentication
+Managed via Auth0.
+Login and logout functionality implemented in Login.tsx and Logout.tsx.
+2. Dashboard
+Displays aggregated trade data metrics using the Metrics component.
+Visualizes data trends with a responsive line chart using Chart.js.
+3. Routing
+Main routes:
+/: Entry point (app/page.tsx) redirects based on authentication status.
+/home: Home page for authenticated users.
+/dashboard: Interactive dashboard for data insights.
+4. Styling
+Tailwind CSS is used for responsive design and styling consistency.
+5. Data Handling
+The combined.json file in the public folder contains the trade data.
+Data is fetched and processed in the Dashboard component using axios.
+Key Scripts
+Run Development Server: Starts the application in development mode. Visit http://localhost:3000.
+Command: npm run dev
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build for Production: Generates the production build of the application.
+Command: npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Start Production Server: Starts the production server after the application has been built.
+Command: npm start
 
-## Learn More
+Lint Code: Runs ESLint to analyze the codebase for issues and enforce coding standards.
+Command: npm run lint
+Technologies Used
+Framework: Next.js 13
+Authentication: Auth0
+Data Visualization: Chart.js
+Styling: Tailwind CSS
+Language: TypeScript
 
-To learn more about Next.js, take a look at the following resources:
+To deploy the application, follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Build the Application:
+Generate the production-ready build using the command npm run build.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Start the Production Server Locally:
+Run the application locally in production mode using the command npm start.
 
-## Deploy on Vercel
+Deploy to a Hosting Platform:
+Use a platform like Vercel (recommended for Next.js) or any hosting provider that supports Node.js applications.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploying to Vercel:
+a. Install the Vercel CLI: npm install -g vercel
+b. Login to Vercel: vercel login
+c. Deploy the application: vercel
+Follow the prompts to set up and deploy your project. Vercel automatically optimizes Next.js applications for production.
+After deployment, Vercel will provide a live URL for your application.
