@@ -46,7 +46,7 @@ This is a Trade Data Dashboard application built with Next.js 13, Auth0, React, 
 Clone the repository to your local machine:
 ```bash
 git clone https://github.com/Sanyam2909/MTS-1-Frontend-Assignment.git
-cd trade-data-dashboard
+cd my-sso-dashboard
 ```
 
 ### 2. Install Dependencies
