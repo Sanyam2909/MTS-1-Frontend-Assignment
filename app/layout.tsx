@@ -40,9 +40,11 @@ const geistMono = localFont({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const redirectUri = process.env.NODE_ENV === 'production'
-    ? 'https://react-trade-dashboard-due5.vercel.app' // Vercel production URL
-    : 'http://localhost:3000'; // Localhost URL for development
+  const redirectUri =
+    process.env.NODE_ENV === 'production'
+      ? 'https://react-trade-dashboard-due5.vercel.app' // Vercel production URL
+      : 'http://localhost:3000'; // Localhost URL for development
+
   return (
     <Auth0Provider
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN!}
