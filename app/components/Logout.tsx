@@ -7,7 +7,14 @@ const Logout = () => {
 
   const handleLogout = async () => {
     try {
+      // Call logout without any arguments
       logout();
+
+      // After logout, redirect the user to the appropriate URL
+      window.location.href =
+        process.env.NODE_ENV === 'production'
+          ? 'https://react-trade-dashboard-due5.vercel.app' // Production URL
+          : 'http://localhost:3000'; // Localhost URL for development
     } catch (error) {
       console.error('Logout failed:', error);
     }
