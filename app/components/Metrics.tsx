@@ -21,7 +21,9 @@ const Metrics: React.FC<MetricsProps> = ({ data }) => {
       </div>
       <div className="p-4 bg-gray-200 rounded-lg shadow w-full md:w-1/3">
         <h3 className="text-lg font-semibold">Average Trade Value</h3>
-        <p className="text-xl font-bold">${averageTradeValue.toLocaleString()}</p>
+        <p className="text-xl font-bold">
+          ${averageTradeValue.toLocaleString()}
+        </p>
       </div>
     </div>
   );

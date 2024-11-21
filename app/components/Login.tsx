@@ -9,16 +9,14 @@ const Login = () => {
     try {
       await loginWithRedirect();
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error('Login failed:', error);
     }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-12 rounded-3xl shadow-lg max-w-md w-full text-center transform transition-all duration-500 hover:scale-105">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">
-          Welcome Back!
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-6">Welcome Back!</h1>
         <p className="text-lg text-gray-600 mb-6">
           Please sign in to access your trade data insights and dashboard.
         </p>
@@ -36,7 +34,8 @@ const Login = () => {
           and{' '}
           <a href="#" className="text-teal-600 hover:text-teal-700">
             Privacy Policy
-          </a>.
+          </a>
+          .
         </p>
       </div>
     </div>

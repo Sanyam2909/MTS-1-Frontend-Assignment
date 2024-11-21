@@ -15,7 +15,15 @@ import {
 } from 'chart.js';
 
 // Register the necessary components from Chart.js
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 interface TradeDataItem {
   date: string;

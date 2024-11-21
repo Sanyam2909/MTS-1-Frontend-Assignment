@@ -1,7 +1,7 @@
 [
-    { "date": "2023-01-01", "tradeValue": 1500 },
-    { "date": "2023-02-01", "tradeValue": 2000 },
-    { "date": "2023-03-01", "tradeValue": 1800 },
-    { "date": "2023-04-01", "tradeValue": 2200 },
-    { "date": "2023-05-01", "tradeValue": 2100 }
-  ]
+  { "date": "2023-01-01", "tradeValue": 1500 },
+  { "date": "2023-02-01", "tradeValue": 2000 },
+  { "date": "2023-03-01", "tradeValue": 1800 },
+  { "date": "2023-04-01", "tradeValue": 2200 },
+  { "date": "2023-05-01", "tradeValue": 2100 }
+]

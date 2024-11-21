@@ -1,7 +1,7 @@
 'use client';
 
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import { Chart as ChartJS } from 'chart.js';
 import {
@@ -15,7 +15,7 @@ import {
 } from 'chart.js';
 import NavBar from './components/NavBar';
 import Login from './components/Login'; // Import your custom Login component
-import "./globals.css";
+import './globals.css';
 
 ChartJS.register(
   CategoryScale,
@@ -28,19 +28,19 @@ ChartJS.register(
 );
 
 const geistSans = localFont({
-  src: "/fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  src: '/fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
 });
 const geistMono = localFont({
-  src: "/fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: '/fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
 });
 
 export const metadata: Metadata = {
-  title: "Trade Data Dashboard",
-  description: "A simplified web app for trade data insights",
+  title: 'Trade Data Dashboard',
+  description: 'A simplified web app for trade data insights',
 };
 
 export default function RootLayout({
@@ -53,11 +53,13 @@ export default function RootLayout({
       authorizationParams={{
         redirect_uri: process.env.NEXT_PUBLIC_AUTH0_REDIRECT_URI!,
         audience: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/api/v2/`,
-        scope: "openid profile email",
+        scope: 'openid profile email',
       }}
     >
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
+        >
           <AuthWrapper>
             <NavBar />
             <main className="container mx-auto p-4 mt-16">{children}</main>

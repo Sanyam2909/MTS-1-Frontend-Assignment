@@ -21,12 +21,14 @@ const Dashboard: React.FC = () => {
         const response = await axios.get<TradeDataItem[]>('/combined.json');
         const rawData: TradeDataItem[] = response.data.map((item: any) => ({
           date: item.Year,
-          tradeValue: item.AnnualTradeValue ? parseFloat(item.AnnualTradeValue.replace(/,/g, '')) : 0,
+          tradeValue: item.AnnualTradeValue
+            ? parseFloat(item.AnnualTradeValue.replace(/,/g, ''))
+            : 0,
         }));
 
         // Aggregate data by year
         const aggregatedData: Record<string, TradeDataItem> = {};
-        rawData.forEach(item => {
+        rawData.forEach((item) => {
           if (aggregatedData[item.date]) {
             aggregatedData[item.date].tradeValue += item.tradeValue;
           } else {
@@ -34,7 +36,9 @@ const Dashboard: React.FC = () => {
           }
         });
 
-        const formattedData = Object.values(aggregatedData).sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
+        const formattedData = Object.values(aggregatedData).sort(
+          (a, b) => parseInt(a.date, 10) - parseInt(b.date, 10)
+        );
         setData(formattedData);
         setIsLoading(false);
       } catch (err) {
@@ -51,7 +55,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-md mt-8">
-      <h1 className="text-3xl font-semibold mb-6 text-gray-800">Trade Data Dashboard</h1>
+      <h1 className="text-3xl font-semibold mb-6 text-gray-800">
+        Trade Data Dashboard
+      </h1>
       <Metrics data={data} />
       <div className="mt-6">
         <Chart data={data} />

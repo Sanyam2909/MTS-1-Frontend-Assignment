@@ -32,11 +32,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-0">
-      {isAuthenticated ? (
-        <Home />
-      ) : (
-        <Login />
-      )}
+      {isAuthenticated ? <Home /> : <Login />}
     </div>
   );
 };

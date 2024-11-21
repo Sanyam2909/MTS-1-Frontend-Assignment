@@ -10,10 +10,12 @@ const Home: React.FC = () => {
 
       <div className="w-full max-w-5xl text-center space-y-8">
         <h1 className="text-5xl font-extrabold text-gray-800 mb-6 sm:text-6xl">
-          Explore and Analyze Trade Data Insights Through Interactive Charts and Metrics
+          Explore and Analyze Trade Data Insights Through Interactive Charts and
+          Metrics
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:px-16">
-          Leverage comprehensive trade data to make informed decisions. Dive deep into the analytics that drive your success.
+          Leverage comprehensive trade data to make informed decisions. Dive
+          deep into the analytics that drive your success.
         </p>
 
         <div className="flex flex-col items-center justify-center">

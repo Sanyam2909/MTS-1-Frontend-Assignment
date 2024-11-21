@@ -17,15 +17,22 @@ const NavBar: React.FC = () => {
             height={60}
             className="rounded-full shadow-lg" // Added shadow for a stylish look
           />
-          <div className="text-white text-3xl font-semibold">Trade AI</div> {/* Larger text size and bolder font */}
+          <div className="text-white text-3xl font-semibold">Trade AI</div>{' '}
+          {/* Larger text size and bolder font */}
         </div>
 
         {/* Navigation Links */}
         <div className="flex space-x-6 items-center">
-          <Link href="/home" className="text-gray-300 hover:text-white transition-colors duration-200">
+          <Link
+            href="/home"
+            className="text-gray-300 hover:text-white transition-colors duration-200"
+          >
             Home
           </Link>
-          <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors duration-200">
+          <Link
+            href="/dashboard"
+            className="text-gray-300 hover:text-white transition-colors duration-200"
+          >
             Dashboard
           </Link>
           {/* Logout button */}
