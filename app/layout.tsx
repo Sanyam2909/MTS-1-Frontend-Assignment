@@ -40,12 +40,15 @@ const geistMono = localFont({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const redirectUri = process.env.NODE_ENV === 'production'
+    ? 'https://react-trade-dashboard-due5.vercel.app' // Vercel production URL
+    : 'http://localhost:3000'; // Localhost URL for development
   return (
     <Auth0Provider
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN!}
       clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID!}
       authorizationParams={{
-        redirect_uri: process.env.NEXT_PUBLIC_AUTH0_REDIRECT_URI!,
+        redirect_uri: redirectUri,
         audience: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/api/v2/`,
         scope: 'openid profile email',
       }}
