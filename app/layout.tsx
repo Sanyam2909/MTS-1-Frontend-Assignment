@@ -45,12 +45,18 @@ export default function RootLayout({
       ? 'https://react-trade-dashboard-due5.vercel.app' // Vercel production URL
       : 'http://localhost:3000'; // Localhost URL for development
 
+  const postLogoutRedirectUri =
+    process.env.NODE_ENV === 'production'
+      ? 'https://react-trade-dashboard-due5.vercel.app'
+      : 'http://localhost:3000'; // Redirect after logout
+
   return (
     <Auth0Provider
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN!}
       clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID!}
       authorizationParams={{
         redirect_uri: redirectUri,
+        post_logout_redirect_uri: postLogoutRedirectUri, // Add this to handle post-logout redirect
         audience: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/api/v2/`,
         scope: 'openid profile email',
       }}
