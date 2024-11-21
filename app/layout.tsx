@@ -1,6 +1,5 @@
 'use client';
 
-import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import { Chart as ChartJS } from 'chart.js';
@@ -37,11 +36,6 @@ const geistMono = localFont({
   variable: '--font-geist-mono',
   weight: '100 900',
 });
-
-export const metadata: Metadata = {
-  title: 'Trade Data Dashboard',
-  description: 'A simplified web app for trade data insights',
-};
 
 export default function RootLayout({
   children,
