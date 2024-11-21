@@ -64,9 +64,8 @@ npm install
 Create a `.env.local` file in the root directory and configure your Auth0 credentials:
 
 ```env
-NEXT_PUBLIC_AUTH0_DOMAIN=<your-auth0-domain>
-NEXT_PUBLIC_AUTH0_CLIENT_ID=<your-auth0-client-id>
-NEXT_PUBLIC_AUTH0_REDIRECT_URI=http://localhost:3000
+NEXT_PUBLIC_AUTH0_DOMAIN=dev-epb6ov4ovdspq1h2.us.auth0.com
+NEXT_PUBLIC_AUTH0_CLIENT_ID=Lawn5QDvYKjBWDbUcwxTmURFyftR2B9E
 ```
 
 ### 4. Start the Development Server
@@ -168,12 +167,9 @@ npm start
 
 ### Deploy to a Hosting Platform
 
-- After building the production version, deploy the application to a hosting platform like **Netlify**, **Heroku**, or any Node.js-supported platform.
+- After building the production version, deploy the application to a hosting platform like **Netlify**, **Vercel**, or any Node.js-supported platform.
 - Follow the specific hosting platform’s documentation for deployment steps.
 
 ---
 
-## Notes
 
-- The project is built using Next.js 13 with authentication handled by Auth0.
-- Ensure that you replace the placeholder Auth0 credentials in `.env.local` with your own to enable authentication.
