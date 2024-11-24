@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-        try {
+      try {
         const response = await axios.get<TradeDataItem[]>('/combined.json');
         const rawData: TradeDataItem[] = response.data.map((item: any) => ({
           date: item.Year,

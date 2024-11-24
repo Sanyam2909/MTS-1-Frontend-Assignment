@@ -11,7 +11,7 @@ if (!fs.existsSync(jsonDir)) {
 }
 
 let filesProcessed = 0;
-const totalFiles = 4; 
+const totalFiles = 4;
 
 // Convert CSV files to JSON
 const convertCsvToJson = (filePath) => {
@@ -70,5 +70,4 @@ const mergeAndServe = () => {
     JSON.stringify(combinedData, null, 2)
   );
   console.log('Combined data written to combined.json');
-
 };

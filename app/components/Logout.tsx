@@ -9,8 +9,8 @@ const Logout = () => {
     try {
       const redirectUrl =
         process.env.NODE_ENV === 'production'
-          ? 'https://react-trade-dashboard-due5.vercel.app' 
-          : 'http://localhost:3000'; 
+          ? 'https://react-trade-dashboard-due5.vercel.app'
+          : 'http://localhost:3000';
 
       logout({
         logoutParams: { returnTo: redirectUrl },

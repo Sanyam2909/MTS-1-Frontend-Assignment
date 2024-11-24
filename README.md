@@ -171,5 +171,3 @@ npm start
 - Follow the specific hosting platform’s documentation for deployment steps.
 
 ---
-
-

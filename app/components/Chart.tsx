@@ -56,7 +56,7 @@ const Chart: React.FC<ChartProps> = ({ data }) => {
       legend: {
         position: 'top',
         onClick: (e: ChartEvent, legendItem: LegendItem) => {
-          return false; 
+          return false;
         },
       },
       tooltip: {
