@@ -2,13 +2,13 @@
 
 import { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useRouter } from 'next/navigation'; // Import useRouter for navigation
+import { useRouter } from 'next/navigation'; 
 import Home from './components/Home';
 import Login from './components/Login';
 
 const HomePage = () => {
   const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0();
-  const router = useRouter(); // Initialize the router
+  const router = useRouter(); 
 
   useEffect(() => {
     // Redirect to login if the user is not authenticated
@@ -20,7 +20,7 @@ const HomePage = () => {
     if (isAuthenticated) {
       router.push('/home');
     }
-  }, [isAuthenticated, isLoading, loginWithRedirect, router]);
+  }, [isAuthenticated, isLoading]);
 
   if (isLoading) {
     return (

@@ -11,7 +11,7 @@ if (!fs.existsSync(jsonDir)) {
 }
 
 let filesProcessed = 0;
-const totalFiles = 4; // Number of CSV files
+const totalFiles = 4; 
 
 // Convert CSV files to JSON
 const convertCsvToJson = (filePath) => {
@@ -31,14 +31,12 @@ const convertCsvToJson = (filePath) => {
       console.log(`Converted ${filePath} to ${jsonFileName}`);
       filesProcessed += 1;
 
-      // Once all files are processed, merge them
       if (filesProcessed === totalFiles) {
         mergeAndServe();
       }
     });
 };
 
-// List of CSV files
 const csvFiles = [
   'D:/Downloads/archive/AnnualValue.csv',
   'D:/Downloads/archive/Countries_Trade_Ranks.csv',
@@ -46,10 +44,8 @@ const csvFiles = [
   'D:/Downloads/archive/Countrywise_Trade_Analysis_1988-2021.csv',
 ];
 
-// Convert each CSV file to JSON
 csvFiles.forEach((filePath) => convertCsvToJson(filePath));
 
-// Merge and serve JSON data
 const mergeAndServe = () => {
   const file1 = JSON.parse(
     fs.readFileSync(path.join(jsonDir, 'AnnualValue.json'))
@@ -75,14 +71,4 @@ const mergeAndServe = () => {
   );
   console.log('Combined data written to combined.json');
 
-  // Serve combined data using Express
-  app.use(express.static('public'));
-
-  app.get('/data/combined.json', (req, res) => {
-    res.sendFile(path.join(jsonDir, 'combined.json'));
-  });
-
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
 };

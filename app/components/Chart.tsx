@@ -14,7 +14,6 @@ import {
   ChartEvent,
 } from 'chart.js';
 
-// Register the necessary components from Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -57,8 +56,7 @@ const Chart: React.FC<ChartProps> = ({ data }) => {
       legend: {
         position: 'top',
         onClick: (e: ChartEvent, legendItem: LegendItem) => {
-          // Prevent the default toggling behavior for the legend click
-          return false; // Disable legend item click interaction
+          return false; 
         },
       },
       tooltip: {
@@ -119,7 +117,7 @@ const Chart: React.FC<ChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="chart-container" style={{ height: '500px' }}>
+    <div style={{ height: '500px' }}>
       <Line data={chartData} options={options} />
     </div>
   );

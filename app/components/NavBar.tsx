@@ -1,27 +1,23 @@
 'use client';
 
 import Link from 'next/link';
-import Logout from './Logout'; // Import the Logout component
-import Image from 'next/image'; // Import Image for the logo
+import Logout from './Logout'; 
+import Image from 'next/image'; 
 
 const NavBar: React.FC = () => {
   return (
     <nav className="bg-gray-800 p-4 fixed w-full z-10 top-0 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo and Company Name */}
         <div className="flex items-center space-x-4">
           <Image
-            src="/images/logo.png" // Replace with the path to your logo image
+            src="/images/logo.png" 
             alt="Company Logo"
-            width={60} // Increased logo size
+            width={60} 
             height={60}
-            className="rounded-full shadow-lg" // Added shadow for a stylish look
+            className="rounded-full shadow-lg" 
           />
           <div className="text-white text-3xl font-semibold">Trade AI</div>{' '}
-          {/* Larger text size and bolder font */}
         </div>
-
-        {/* Navigation Links */}
         <div className="flex space-x-6 items-center">
           <Link
             href="/home"
@@ -35,7 +31,6 @@ const NavBar: React.FC = () => {
           >
             Dashboard
           </Link>
-          {/* Logout button */}
           <Logout />
         </div>
       </div>

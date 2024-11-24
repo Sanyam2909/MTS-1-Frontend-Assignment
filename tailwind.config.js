@@ -2,8 +2,8 @@
 
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}', // Scan app folder for classes
-    './components/**/*.{js,ts,jsx,tsx}', // Scan components folder
+    './app/**/*.{js,ts,jsx,tsx}', 
+    './components/**/*.{js,ts,jsx,tsx}', 
   ],
   theme: {
     extend: {
@@ -12,8 +12,8 @@ module.exports = {
         mono: ['var(--font-geist-mono)', 'monospace'],
       },
       colors: {
-        primary: '#1D4ED8', // Customize primary color
-        secondary: '#F97316', // Customize secondary color
+        primary: '#1D4ED8', 
+        secondary: '#F97316', 
       },
     },
   },

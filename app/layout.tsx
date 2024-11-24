@@ -13,7 +13,7 @@ import {
   Legend,
 } from 'chart.js';
 import NavBar from './components/NavBar';
-import Login from './components/Login'; // Import your custom Login component
+import Login from './components/Login'; 
 import './globals.css';
 
 ChartJS.register(
@@ -56,7 +56,7 @@ export default function RootLayout({
       clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID!}
       authorizationParams={{
         redirect_uri: redirectUri,
-        post_logout_redirect_uri: postLogoutRedirectUri, // Add this to handle post-logout redirect
+        post_logout_redirect_uri: postLogoutRedirectUri, 
         audience: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/api/v2/`,
         scope: 'openid profile email',
       }}
@@ -89,7 +89,7 @@ function AuthWrapper({ children }: { children: React.ReactNode }) {
   if (!isAuthenticated) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <Login /> {/* Render your custom Login component */}
+        <Login /> 
       </div>
     );
   }
